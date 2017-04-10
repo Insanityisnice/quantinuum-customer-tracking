@@ -8,4 +8,4 @@ COPY $source .
 
 RUN dotnet restore
 ENTRYPOINT ["dotnet", "run"]
-#ENTRYPOINT ["dotnet", "ProductCatalogService.dll"]
+#ENTRYPOINT ["dotnet", "CustomerTrackingService.dll"]
