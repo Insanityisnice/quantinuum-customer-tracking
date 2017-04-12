@@ -17,8 +17,9 @@ namespace CustomerTrackingService
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
-            loggerFactory.AddDebug();
+            // TODO: Drive the logging levels and locations from configuration.
+            loggerFactory.AddConsole(minLevel: LogLevel.Debug, includeScopes: true);
+            loggerFactory.AddDebug(minLevel: LogLevel.Debug);
 
             if (env.IsDevelopment())
             {
